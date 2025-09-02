@@ -4,11 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
     <title>Guess The Number </title>
 
 </head>
-<body>
-    
+<body onload="main();">
+    <div id="nav">
+        <div id="attemptsBox">
+            <div id="icon" class="item">
+                <img src="heart.webp" alt="">
+            </div>
+            <div id="atmptNum" class="item">
+                <label id="attmptLbl">5</label>
+            </div>
+        </div>
+    </div>
+    <div id="container">
+        <div id="progeress" class="contItem">Choosing number</div>
+        <div id="boxChanging" class="contItem">
+            <div id="loadingBox">
+                <div class="boxes" id="box1"></div>
+                <div class="boxes" id="box2"></div>
+                <div class="boxes" id="box3"></div>
+                <div class="boxes" id="box4"></div>
+            </div>
+        </div>
+        <div id="contGuessBox">
+            <input type="text"  id="guessedNumBox" onkeyup="checkTheGuessedNum(event);">
+        </div>
+        <div id="numStatus">
+            <label id="numLbl">status label</label>
+        </div>
+    </div>
 
     <script src="inter.js"></script>
 </body>
