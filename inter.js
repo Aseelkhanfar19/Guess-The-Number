@@ -122,7 +122,7 @@ function countTheAttempts()
         
 
     }
-    },1000);
+    },300);
 }
 
 function stopTheGame(){
