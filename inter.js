@@ -105,7 +105,7 @@ function checkTheGuessedNum(event){
       countTheAttempts();
     }
     else{
-        document.getElementById("numLbl").innerHTML="something went wrong , the number is "+choosenNumber;
+        document.getElementById("numLbl").innerHTML="something went wrong , please try a number";
         document.getElementById("numLbl").style.color="red";
         document.getElementById("guessedNumBox").value="";
 
