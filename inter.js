@@ -68,6 +68,7 @@ function checkTheGuessedNum(event){
     {
         document.getElementById("numLbl").innerHTML="Correct!!";
         document.getElementById("numLbl").style.color="green";
+        document.getElementById("guessedNumBox").value="";
         setTimeout(function(){
         stopTheGame()
         startTheGame();},700);
@@ -77,12 +78,14 @@ function checkTheGuessedNum(event){
 
         document.getElementById("numLbl").innerHTML="close!";
         document.getElementById("numLbl").style.color="green";
+        document.getElementById("guessedNumBox").value="";
         countTheAttempts();
     }
     else if(guessedNumber >= choosenNumber+5)
     {
          document.getElementById("numLbl").innerHTML="Too high";
         document.getElementById("numLbl").style.color="red";
+        document.getElementById("guessedNumBox").value="";
 
          countTheAttempts();
     }
@@ -90,18 +93,21 @@ function checkTheGuessedNum(event){
     {
         document.getElementById("numLbl").innerHTML="close!";
         document.getElementById("numLbl").style.color="green";
+        document.getElementById("guessedNumBox").value="";
         countTheAttempts();
     }
     else if(guessedNumber<=choosenNumber-5)
     {
       document.getElementById("numLbl").innerHTML="Too low";
         document.getElementById("numLbl").style.color="red";
+        document.getElementById("guessedNumBox").value="";
 
       countTheAttempts();
     }
     else{
         document.getElementById("numLbl").innerHTML="something went wrong , the number is "+choosenNumber;
         document.getElementById("numLbl").style.color="red";
+        document.getElementById("guessedNumBox").value="";
 
     }
 
@@ -115,7 +121,9 @@ function countTheAttempts()
     setTimeout(function(){
     if(attempts==0){
      document.getElementById("numLbl").innerHTML=" the number is "+choosenNumber+",<br>Game Over ";
+     document.getElementById("guessedNumBox").value="";
      document.getElementById("numLbl").style.color="red";
+     document.getElementById("guessedNumBox").disabled=true;
     // setTimeout(stopTheGame,3000);
     }
     else{
@@ -132,6 +140,7 @@ function stopTheGame(){
     document.getElementById("attmptLbl").innerHTML=attempts;
     document.getElementById("numLbl").innerHTML="";  
     document.getElementById("guessedNumBox").value="";
+    document.getElementById("guessedNumBox").disabled=false;
     displayLoading();
     startTheGame();
 
