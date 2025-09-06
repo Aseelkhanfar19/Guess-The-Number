@@ -14,7 +14,7 @@ function main(){
 function startTheGame()
 {
     //to start the game
-    setTimeout(searchingForNumber,5000);
+    setTimeout(searchingForNumber,3000);
     
 
 }
@@ -67,29 +67,42 @@ function checkTheGuessedNum(event){
     if(guessedNumber==choosenNumber)
     {
         document.getElementById("numLbl").innerHTML="Correct!!";
+        document.getElementById("numLbl").style.color="green";
         setTimeout(function(){
         stopTheGame()
         startTheGame();},700);
     }
-    else if(guessedNumber>=choosenNumber+2 && guessedNumber<choosenNumber+5)
+    else if(guessedNumber>choosenNumber && guessedNumber<choosenNumber+5)
     {
-        document.getElementById("numLbl").innerHTML="Too close";
+
+        document.getElementById("numLbl").innerHTML="close!";
+        document.getElementById("numLbl").style.color="green";
         countTheAttempts();
     }
     else if(guessedNumber >= choosenNumber+5)
     {
          document.getElementById("numLbl").innerHTML="Too high";
+        document.getElementById("numLbl").style.color="red";
+
          countTheAttempts();
     }
-    else if(guessedNumber>=choosenNumber-2 && guessedNumber>choosenNumber-5 )
+    else if(guessedNumber<choosenNumber && guessedNumber>choosenNumber-5 )
     {
-        document.getElementById("numLbl").innerHTML="Too close";
+        document.getElementById("numLbl").innerHTML="close!";
+        document.getElementById("numLbl").style.color="green";
         countTheAttempts();
     }
     else if(guessedNumber<=choosenNumber-5)
     {
-      document.getElementById("numLbl").innerHTML="Too low";  
+      document.getElementById("numLbl").innerHTML="Too low";
+        document.getElementById("numLbl").style.color="red";
+
       countTheAttempts();
+    }
+    else{
+        document.getElementById("numLbl").innerHTML="something went wrong , the number is "+choosenNumber;
+        document.getElementById("numLbl").style.color="red";
+
     }
 
     }
@@ -101,8 +114,8 @@ function countTheAttempts()
     document.getElementById("attmptLbl").innerHTML=attempts; 
     setTimeout(function(){
     if(attempts==0){
-    alert("Game Over!");
-    stopTheGame();
+     document.getElementById("numLbl").innerHTML="Game Over , the number is"+choosenNumber;
+    setTimeout(stopTheGame(),1000);
     }
     else{
         

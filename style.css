@@ -87,7 +87,7 @@ body{
 #container>#boxChanging> #loadingBox > .boxes
 {
     display: inline-block;
-    width: 27px;
+    width: 13px;
     height: 15px;
     background-color: rgb(0, 0, 0);
     border-radius:3px ;
@@ -97,13 +97,13 @@ body{
     animation: load .9s infinite .5s;
 }
 #container>#boxChanging> #loadingBox > #box2{
-        animation: load 1.65s infinite .7s;
+        animation: load .9s infinite .7s;
 }
 #container>#boxChanging> #loadingBox > #box3{
-     animation: load .8s infinite .8s;
+     animation: load .9s infinite .8s;
 }
 #container>#boxChanging> #loadingBox > #box4{
-     animation: load 1s infinite .6s;
+     animation: load .9s infinite 1s;
 }
 
 #container > #contGuessBox{
@@ -127,6 +127,10 @@ body{
     font-size: 50px;
     text-align: center;
     text-transform: capitalize;
+    color:white;
+    text-shadow: 2px 2px 5px rgb(0, 0, 0);
+    font-weight: bolder;
+    text-transform: uppercase;
 
 }
 
