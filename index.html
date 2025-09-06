@@ -11,6 +11,7 @@
 
 </head>
 <body onload="main();">
+    <div id="alertContainer"></div>
     <div id="nav">
         <div id="attemptsBox">
             <div id="icon" class="item">
@@ -22,6 +23,9 @@
         </div>
     </div>
     <div id="container">
+        <div id="numStatus">
+            <label id="numLbl"></label>
+        </div>
         <div id="progeress" class="contItem">Choosing number</div>
         <div id="boxChanging" class="contItem">
             <div id="loadingBox">
@@ -34,9 +38,7 @@
         <div id="contGuessBox">
             <input type="text"  id="guessedNumBox" onkeyup="checkTheGuessedNum(event);">
         </div>
-        <div id="numStatus">
-            <label id="numLbl">status label</label>
-        </div>
+
     </div>
 
     <script src="inter.js"></script>
