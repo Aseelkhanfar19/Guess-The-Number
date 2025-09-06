@@ -114,8 +114,9 @@ function countTheAttempts()
     document.getElementById("attmptLbl").innerHTML=attempts; 
     setTimeout(function(){
     if(attempts==0){
-     document.getElementById("numLbl").innerHTML="Game Over , the number is"+choosenNumber;
-    setTimeout(stopTheGame(),1000);
+     document.getElementById("numLbl").innerHTML=" the number is "+choosenNumber+",<br>Game Over ";
+     document.getElementById("numLbl").style.color="red";
+    // setTimeout(stopTheGame,3000);
     }
     else{
         
